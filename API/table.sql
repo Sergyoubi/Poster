@@ -1,0 +1,8 @@
+CREATE DATABASE vuecrud;
+
+CREATE TABLE posts (
+    id SERIAL NOT NULL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    content VARCHAR(100) NOT NULL
+); 
