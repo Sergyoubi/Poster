@@ -18,7 +18,7 @@ npm run build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-This is a CRUS application made with vue.JS and backed with nodeJS/Expresss; We can create, read, delete and update contents
+This is a CRUD application made with vue.JS in front-end and backed with nodeJS/Expresss; We can do basic operations: create, read, update and delete contents.
 
 Landing Page
 ![Screen Shot 2021-06-04 at 20 08 41-min](https://user-images.githubusercontent.com/75132670/120847291-f52dc980-c57b-11eb-86e6-a771ab26a6c0.png)
