@@ -1,4 +1,4 @@
-# pevn-crud-app
+# vue.js-crud-app
 
 ## Project setup
 ```
