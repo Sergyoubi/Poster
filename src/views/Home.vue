@@ -33,14 +33,6 @@ export default {
 }
 </script>
 
-<style>
+<style></style>
 
-</style>
 
-<!--
-<div class="w-full h-screen bg-purple-700 flex justify-center items-center">
-    <div class="w-10/12 h-1/4 mx-auto flex justify-center items-center">
-      <p class="lg:text-8xl text-white font-black">Poster... <span class="text-5xl font-thin">Vue.js FullStack Application</span></p>  
-    </div>
-</div>
--->
