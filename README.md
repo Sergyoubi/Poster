@@ -23,6 +23,7 @@ Poster is a CRUD application made with vue.JS in Frontend and use Node.js/Expres
 Landing Page
 ![Screen Shot 2021-06-10 at 14 24 02-min](https://user-images.githubusercontent.com/75132670/123327108-b53a8080-d542-11eb-99f3-9cdc3b77c331.png)
 
+                                    -----------------------------------------------------
 Add new post page
 ![Screen Shot 2021-06-10 at 14 24 24-min](https://user-images.githubusercontent.com/75132670/123328407-3a726500-d544-11eb-9227-68ea5cfa9f1e.png)
 
