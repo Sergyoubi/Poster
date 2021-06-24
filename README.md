@@ -18,22 +18,22 @@ npm run build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-This is a CRUD application made with vue.JS in front-end and backed with nodeJS/Expresss; We can do basic operations: create, read, update and delete contents.
+Poster is a CRUD application made with vue.JS in Frontend and use Node.js/Expresss.js in the Backend. Datas are stored in PostgreSQL Database;
 
 Landing Page
-![Screen Shot 2021-06-04 at 20 08 41-min](https://user-images.githubusercontent.com/75132670/120847291-f52dc980-c57b-11eb-86e6-a771ab26a6c0.png)
+![Screen Shot 2021-06-10 at 14 24 02-min](https://user-images.githubusercontent.com/75132670/123327108-b53a8080-d542-11eb-99f3-9cdc3b77c331.png)
 
 Add new post page
-![Screen Shot 2021-06-04 at 20 09 01-min](https://user-images.githubusercontent.com/75132670/120847297-f8c15080-c57b-11eb-8002-7fc44db1e427.png)
+![Screen Shot 2021-06-10 at 14 24 24-min](https://user-images.githubusercontent.com/75132670/123327185-d13e2200-d542-11eb-9d2d-8b44570a49dc.png)
+
 
 List of available post
-![Screen Shot 2021-06-04 at 20 09 19-min](https://user-images.githubusercontent.com/75132670/120847325-024ab880-c57c-11eb-865b-19495f4bca95.png)
+![Screen Shot 2021-06-10 at 14 24 47-min](https://user-images.githubusercontent.com/75132670/123327214-d8fdc680-d542-11eb-9752-679903042bfe.png)
 
-Post detail
-![Screen Shot 2021-06-04 at 20 09 32-min](https://user-images.githubusercontent.com/75132670/120847375-11316b00-c57c-11eb-8154-d6b3cb5ccc21.png)
 
-Editing post 
-![Screen Shot 2021-06-04 at 20 09 51-min](https://user-images.githubusercontent.com/75132670/120847379-1393c500-c57c-11eb-9d8d-10ec8f1016f0.png)
+Update Post
+![Screen Shot 2021-06-10 at 14 25 04-min](https://user-images.githubusercontent.com/75132670/123327436-14989080-d543-11eb-895b-60b5cd4ec056.png)
 
-Delete post
-![Screen Shot 2021-06-04 at 20 10 27-min](https://user-images.githubusercontent.com/75132670/120847382-155d8880-c57c-11eb-9426-5e003a343d16.png)
+Delete Post
+![Screen Shot 2021-06-10 at 14 25 57-min](https://user-images.githubusercontent.com/75132670/123327523-2e39d800-d543-11eb-99e5-d6d6d1978ba7.png)
+
