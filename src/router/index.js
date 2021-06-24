@@ -4,6 +4,7 @@ import Create from '../views/Create.vue'
 import GetAll from '../views/GetAll.vue'
 import GetOnePost from '../views/GetOnePost.vue'
 import NotFound from '../views/NotFound.vue'
+import Delete from '../views/Delete.vue'
 
 const routes = [
   { 
@@ -17,14 +18,19 @@ const routes = [
     component: Create
   },
   {
-    path: '/all/post',
+    path: '/post',
     name: 'GetAll',
     component: GetAll
   },
   {
-    path: '/all/post/id',
+    path: '/post/id',
     name: 'GetOnePost',
     component: GetOnePost
+  },
+  {
+    path: '/delete/post/id',
+    name: 'Delete',
+    component: Delete
   },
   {
     path: '/404', 

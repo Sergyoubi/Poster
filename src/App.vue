@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-screen h-10 bg-blue-900">
+    <div class="w-screen h-10 bg-purple-700">
       <div class="w-7/12 h-full mx-auto items-center flex justify-around text-white">
         <router-link :to="{name: 'Home'}">Home</router-link>
         <router-link :to="{name: 'Create'}">Create New Post</router-link>

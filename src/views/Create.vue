@@ -1,28 +1,19 @@
 <template>
-  <div class="w-screen">
-    <div class="w-9/12 h-full mx-auto">
-      <form @submit.prevent="createNewPost">
-        <div class="w-6/12 flex justify-around mx-auto mt-20">
-          <label>Title</label>
-          <input type="text" v-model="title" required class="w-3/4 border border-gray-600">
-        </div>
+  
+  <div class="text-center font-bold text-2xl m-10 text-gray-400">Add New Post</div>
 
-        <div class="w-6/12 flex justify-around mx-auto mt-20">
-          <label>Author</label>
-          <input type="text" v-model="author" required class="w-3/4 border border-gray-600">
-        </div>
-
-        <div class="w-6/12 flex justify-around mx-auto mt-20">
-          <label>Contents</label>
-          <textarea required v-model="content" class="w-3/4 border border-gray-600"></textarea>
-        </div>
-
-        <div class="mt-10">
-          <input type="submit" value="Add New Content" class="w-7/12 p-2 rounded-lg bg-green-400">
-        </div>
-      </form>
+  <form @submit.prevent="createNewPost">
+    <div class="mt-10 mx-auto w-10/12 rounded-2xl flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl">
+      <input type="text" required class="bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" v-model="title" spellcheck="false" placeholder="Title">
+      <input type="text" required class="bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" v-model="author" spellcheck="false" placeholder="Author">
+      <textarea required class="bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none" v-model="content" spellcheck="false" placeholder="Describe everything about this post here"></textarea>
+      
+      <div class="flex justify-end mt-5">
+        <input type="submit" value="Add Post" class="border border-gray-200 rounded-xl py-2 px-4 font-thin cursor-pointer text-sm text-white ml-2 bg-indigo-600">
+      </div>
     </div>
-  </div>
+  </form>
+
 </template>
 
 <script>
@@ -51,7 +42,7 @@ export default {
           console.error('Error:', error);
         }); 
         
-      //redirect to create route
+      
       this.$router.push({ name: 'Create' });
 
       //convert data properties back into empty strings
@@ -65,4 +56,4 @@ export default {
 
 </script>
 
-<style> </style>
+<style></style>

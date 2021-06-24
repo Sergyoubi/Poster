@@ -1,50 +1,50 @@
 <template>
-  <div class="w-screen h-screen">
-    <div v-if="result">
-      <div class="flex justify-center">
-        <table class="mt-20">
-          <tr class="text-xl text-gray-600">
-            <th>Title</th>
-            <th>Author</th>
-            <th>Content</th>
-          </tr>
-          <tr class="text-gray-600">
-            <td> {{result.title}} </td>
-            <td> {{result.author}} </td>
-            <td> {{result.content}} </td>
-            <td @click="EditToggle" class="bg-yellow-300 border-separate text-center text-gray-700 font-medium hover:bg-yellow-200">
-              <span v-if="edit">Hide Edit Form</span>
-              <span v-else>Edit</span>
-            </td>
-            <td @click="deleteContent" class="bg-red-400 border-separate text-center text-gray-700  font-medium hover:bg-red-500"> Delete </td>
-          </tr>
-        </table>
-      </div>
-      <div v-if="edit">
-          <Edit @changeContents="updateContents"/>
-      </div>
+  <div class="w-screen">
+    <div class="text-center font-bold text-2xl lg:m-10 text-gray-400">
+      Update Post
     </div>
-    <div v-else class="text-2xl text-gray-600 mt-52">
-      <p>Loading...</p>
+    <div v-if="result">
+      <form @submit.prevent="update">
+        <div class="editor lg:mt-10 mx-auto w-10/12 rounded-2xl flex flex-col text-gray-800 border border-gray-400 p-4 shadow-xl max-w-2xl">
+          <div class="w-full flex justify-between items-center mb-4">
+            <label>Title:</label>
+            <input type="text" required class="title w-10/12 bg-gray-50 border border-gray-400 text-gray-800 p-2 outline-none" v-model="title"  :placeholder="result.title">
+          </div>
+          <div class="w-full flex justify-between items-center mb-4">
+            <label>Author:</label>
+            <input type="text" required class="title w-10/12 bg-gray-50 border border-gray-400 text-gray-800 p-2 outline-none" v-model="author"  :placeholder="result.author">
+          </div>
+          <div class="w-full flex justify-between items-start mb-4">
+            <label class="mt-3">Comment:</label>
+            <textarea required class="bg-gray-50 p-3 w-10/12 h-60 border border-gray-400 text-gray-800 outline-none" v-model="content" spellcheck="true" :placeholder="result.content"> </textarea>
+          </div>
+          <div class="flex justify-end mt-5">
+            <input @click="cancel" type="button" value="Cancel" class="border border-gray-200 rounded-2xl py-2 px-4 font-thin cursor-pointer text-gray-700 ml-2 bg-gray-200 hover:bg-gray-300">
+            <input type="submit" value="Save Update" class="border border-purple-700 rounded-2xl py-2 px-4 font-thin cursor-pointer text-white ml-2 bg-purple-700 hover:bg-purple-600">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div v-else class="text-lg text-gray-600 mt-52">
+      Loading...
     </div>
   </div>
 </template>
 
 <script>
 
-import Edit from './partials/Edit.vue'
 
 export default {
 
-  components: { Edit },
+  components: { },
   data() {
     return {
       id: this.$route.params.id,
       result: null,
-      edit: false,
-      editedTitle: '',
-      editedAuthor: '',
-      editedContent: '',
+      title: '',
+      author: '',
+      content: ''
+      
     }
   },
   mounted() {
@@ -56,22 +56,9 @@ export default {
       .catch(err => console.log(err.message))
   },
   methods: {
+    update() {
 
-    EditToggle() {
-      this.edit = !this.edit
-    },
-
-    hideBack() {
-      this.edit = !this.edit
-    },
-
-    updateContents(title, author, content) {
-      //assign each ppty to sended data
-      this.editedTitle = title
-      this.editedAuthor = author
-      this.editedContent = content
-
-      const editedData = { title: this.editedTitle, author: this.editedAuthor, content: this.editedContent };
+      const editedData = { title: this.title, author: this.author, content: this.content }
 
       fetch(`http://localhost:4000/api/edit/post/${this.id}`, {
         method: 'POST',
@@ -79,9 +66,11 @@ export default {
         body: JSON.stringify( editedData )
       })
         .then(res => res.json())
+
         .then(data => {
           console.log('Update was a Success ')
         })
+
         .catch((error) => {
           console.error('Error while updating', error);
         }); 
@@ -89,39 +78,13 @@ export default {
       //redirect to /get/post route
       this.$router.push({ name: 'Create' });
             
-      this.editedTitle = ''
-      this.editedAuthor = ''
-      this.editedContent = ''
-      
+      this.title = ''
+      this.author = ''
+      this.content = ''
     },
-
-    deleteContent() {
-     
-      const confirmDeletion = confirm('Are you sure you want to delete this content?')
-
-      if (confirmDeletion) {
-      
-        fetch(`http://localhost:4000/api/delete/post/${this.id}`, {
-          method: 'DELETE',
-          headers: { 'Content-Type': 'application/json' },
-        })
-
-          .then( res => res.json() )
-
-          .then(data => {
-            console.log(`${data} was successfully deleted`)
-          })
-
-          .catch((error) => {
-            console.error(`Error while deleting: ${error}` )
-          }); 
-
-        //redirect to /get/post route
-        this.$router.push({ name: 'Create' });
-      }
-    
-      
-    }   
+    cancel() {
+      this.$router.push({ name: 'Create' });
+    }
   }
 }
 </script>
