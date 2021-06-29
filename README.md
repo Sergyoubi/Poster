@@ -3,6 +3,7 @@
 ## Project setup
 ```
 npm install
+==> Add your database config variables
 ```
 
 ### Compiles and hot-reloads for development
