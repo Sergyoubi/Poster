@@ -3,7 +3,7 @@
 ## Project setup
 ```
 npm install
-==> Add your database config variables
+==> Add your database config variables in API/db.config.js
 ```
 
 ### Compiles and hot-reloads for development
