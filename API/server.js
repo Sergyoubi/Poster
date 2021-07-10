@@ -7,7 +7,7 @@ const corsOptions = {
   origin: 'http://localhost:8080',
   optionsSuccessStatus: 200 
 }
-
+ 
 app.use(cors(corsOptions));
 
 app.use(express.urlencoded({extended: true}))
